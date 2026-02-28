@@ -112,6 +112,18 @@ const Slide1 = () => {
           style={{ rotateX: rotateXText, rotateY: rotateYText }}
           className="flex flex-col items-center [transform-style:preserve-3d]"
         >
+          {/* Floating Premium Client Logo */}
+          <motion.div
+            initial={{ opacity: 0, y: -50, z: -50, rotateX: 180 }}
+            animate={{ opacity: 1, y: 0, z: 80, rotateX: 0 }}
+            transition={{ duration: 1.5, delay: 0.2, type: 'spring', bounce: 0.4 }}
+            className="mb-10 relative [transform:translateZ(80px)]"
+          >
+            <div className="absolute inset-0 bg-premium-gold/30 blur-2xl rounded-full animate-pulse" />
+            <div className="relative p-2 md:p-3 bg-white/10 backdrop-blur-xl border border-white/20 rounded-[20px] shadow-[0_20px_40px_rgba(0,0,0,0.5)] flex items-center justify-center">
+              <img src="/Client_LOGO.jpeg" alt="Client Logo" className="h-16 md:h-24 object-contain rounded-xl" />
+            </div>
+          </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 50, z: -50 }}
             animate={{ opacity: 1, y: 0, z: 30 }}
@@ -628,10 +640,21 @@ const Slide10 = () => (
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.5, duration: 1 }}
-        className="mt-12 text-center"
+        className="mt-12 flex flex-col items-center text-center"
       >
+        <p className="text-xl md:text-2xl text-gray-400 font-light tracking-[0.2em] uppercase max-w-2xl mx-auto leading-relaxed mb-6">
+          Let's build the future of
+        </p>
+        <div className="flex items-center gap-4 sm:gap-6 mb-6">
+          <div className="w-10 sm:w-20 h-[1px] bg-gradient-to-r from-transparent to-premium-gold" />
+          <div className="p-3 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 shadow-[0_0_30px_rgba(212,175,55,0.15)] flex items-center justify-center gap-4">
+            <img src="/Client_LOGO.jpeg" alt="Hatim Furniture Logo" className="h-10 sm:h-14 object-contain rounded-lg" />
+            <strong className="text-white text-xl md:text-3xl tracking-widest font-bold pr-2 sm:pr-4">Hatim Furniture</strong>
+          </div>
+          <div className="w-10 sm:w-20 h-[1px] bg-gradient-to-l from-transparent to-premium-gold" />
+        </div>
         <p className="text-xl md:text-2xl text-gray-400 font-light tracking-[0.2em] uppercase max-w-2xl mx-auto leading-relaxed">
-          Let's build the future of <br /> <strong className="text-white">Hatim Furniture</strong> together.
+          together.
         </p>
       </motion.div>
 
