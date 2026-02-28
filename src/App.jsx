@@ -196,9 +196,9 @@ const Slide2 = () => (
     animate={{ opacity: 1, x: 0 }}
     exit={{ opacity: 0, x: -100 }}
     transition={{ duration: 0.8, ease: "easeInOut" }}
-    className="h-full w-full flex flex-col px-20 relative pt-32"
+    className="h-full w-full flex flex-col justify-center px-20 relative"
   >
-    <div className="flex justify-between items-start z-10">
+    <div className="flex justify-between items-center z-10">
       <div className="max-w-xl">
         <h2 className="text-5xl font-bold mb-6">The Digital Audit</h2>
         <h3 className="text-2xl text-premium-gold mb-8">A Legacy Brand with Untapped Digital Potential</h3>
