@@ -258,6 +258,88 @@ const Slide3 = () => (
   </motion.div>
 );
 
+const SlideCurrentProduction = () => {
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="h-full w-full flex flex-col items-center justify-center relative overflow-hidden bg-premium-black"
+    >
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,0,0,0.05)_0%,transparent_70%)]" />
+
+      <div className="z-10 text-center max-w-5xl px-10 mb-16">
+        <motion.h2
+          initial={{ y: -30, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          className="text-4xl sm:text-5xl font-bold mb-6 tracking-wide text-white"
+        >
+          The Current Reality: <span className="text-red-500/80">Basic Motion Graphics</span>
+        </motion.h2>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.4 }}
+          className="text-xl text-gray-400 font-light"
+        >
+          Standard video production lacks the immersive, high-end feel required to captivate premium audiences. It feels flat and transactional.
+        </motion.p>
+      </div>
+
+      <div className="flex flex-col md:flex-row gap-8 md:gap-16 z-10 w-full max-w-7xl px-10 items-center justify-center perspective-[1000px]">
+        {/* Video 1 Container */}
+        <motion.div
+          initial={{ rotateY: 20, x: -50, opacity: 0 }}
+          animate={{ rotateY: 0, x: 0, opacity: 1 }}
+          transition={{ duration: 1, type: "spring", delay: 0.6 }}
+          className="relative w-full max-w-[500px] aspect-video rounded-xl overflow-hidden border border-white/10 shadow-[0_0_40px_rgba(255,0,0,0.1)] group [transform-style:preserve-3d]"
+        >
+          <div className="absolute inset-0 bg-red-900/10 mix-blend-overlay z-10 pointer-events-none group-hover:opacity-0 transition-opacity duration-500" />
+          <div className="absolute inset-0 top-0 left-0 w-full h-full bg-gradient-to-t from-black/80 to-transparent z-10 flex flex-col justify-end p-6">
+            <span className="text-red-500/80 uppercase tracking-widest text-xs font-bold mb-2">Weakness 01</span>
+            <h3 className="text-xl font-bold text-white">Flat Spatial Presence</h3>
+          </div>
+          <video
+            src="https://res.cloudinary.com/dxez9kmnn/video/upload/v1772259462/AQPEN0-OGxLa41tZufQ2o-WFiggkPjwmRn46xkBGbArdyA4npHe6DSM20mFhtH6sQngoTUK_GCtwrKIfT6RPyCJ_M4WPnjEFYN5fTNRaICcJKg_apzs83.mp4"
+            className="w-full h-full object-cover filter grayscale-[50%] group-hover:grayscale-0 transition-all duration-700"
+            autoPlay loop muted playsInline
+          />
+        </motion.div>
+
+        {/* Video 2 Container */}
+        <motion.div
+          initial={{ rotateY: -20, x: 50, opacity: 0 }}
+          animate={{ rotateY: 0, x: 0, opacity: 1 }}
+          transition={{ duration: 1, type: "spring", delay: 0.8 }}
+          className="relative w-full max-w-[500px] aspect-video rounded-xl overflow-hidden border border-white/10 shadow-[0_0_40px_rgba(255,0,0,0.1)] group [transform-style:preserve-3d]"
+        >
+          <div className="absolute inset-0 bg-red-900/10 mix-blend-overlay z-10 pointer-events-none group-hover:opacity-0 transition-opacity duration-500" />
+          <div className="absolute inset-0 top-0 left-0 w-full h-full bg-gradient-to-t from-black/80 to-transparent z-10 flex flex-col justify-end p-6">
+            <span className="text-red-500/80 uppercase tracking-widest text-xs font-bold mb-2">Weakness 02</span>
+            <h3 className="text-xl font-bold text-white">Lack of Interactive Depth</h3>
+          </div>
+          <video
+            src="https://res.cloudinary.com/dxez9kmnn/video/upload/v1772260385/AQO6hUE4V8hAwT3oyCryrYajEQQRETrBh-5sZc-sXgDb7Bw43iFUnJX6n2em4uNv3C6SFMFRnWfZjDCk5Yh-WQzv5lNRV2wpEB9VHt2_D8QbxA_v3igln.mp4"
+            className="w-full h-full object-cover filter grayscale-[50%] group-hover:grayscale-0 transition-all duration-700"
+            autoPlay loop muted playsInline
+          />
+        </motion.div>
+      </div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.5, duration: 1 }}
+        className="mt-16 text-center z-10"
+      >
+        <p className="text-sm tracking-[0.3em] font-bold text-gray-500 uppercase">
+          Compare this to the <span className="text-premium-gold">Future...</span>
+        </p>
+      </motion.div>
+    </motion.div>
+  );
+};
+
 const Slide4 = () => (
   <motion.div
     initial={{ opacity: 0 }}
@@ -670,7 +752,7 @@ const Slide10 = () => (
   </motion.div>
 );
 
-const slides = [Slide1, Slide2, Slide3, Slide4, Slide5, Slide6, Slide7, Slide8, Slide9, Slide10];
+const slides = [Slide1, Slide2, Slide3, SlideCurrentProduction, Slide4, Slide5, Slide6, Slide7, Slide8, Slide9, Slide10];
 
 export default function App() {
   const [currentSlide, setCurrentSlide] = useState(0);
